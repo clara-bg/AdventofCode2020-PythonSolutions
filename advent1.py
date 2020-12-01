@@ -31,6 +31,7 @@ def getlist():
     theset = set((nextlist))
 
 '''
+Part A:
 This iterates through the list with two different variables, tests whether they add to 2020.
 It multiplies them and prints the result.
 '''
@@ -42,6 +43,7 @@ def twomultiples():
                 return True
 
 '''
+Part B:
 This iterates through the list with three different variables, tests whether they add to 2020.
 It multiplies them and prints the result.
 '''            
@@ -54,7 +56,7 @@ def threemultiples():
                    return True
 
 '''
-This code is essentially a better version of twomultiples()
+Part A but better:
 It uses a set instead of a list.
 This solution uses O(n) whereas twomultiples() is O(n**2) and threemultiples() is O(n**3)
 It is more effecient.
