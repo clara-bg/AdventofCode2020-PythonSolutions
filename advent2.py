@@ -11,7 +11,7 @@ This challenge was to do some password validation on a list of 1000 entries.
 The most complicated part is to format the text file into something useful.
 I split the text up in various ways to isolate the lower bound of the policy, the upper bound of the policy,
 the letter delimited by these and finally the password itself into seperate lists.
-This mass of code validates for both part a nad part b of the challenge and outputs the number of valid and invalid passwords for each.
+This mass of code validates for both part a and part b of the challenge and outputs the number of valid and invalid passwords for each.
 '''
 
 
