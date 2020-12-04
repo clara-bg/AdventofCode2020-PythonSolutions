@@ -33,12 +33,10 @@ def dataformat(data):
 # This function uses .issubset() to determine whether all the required elements are in the passport entry
 def partA(separatedata):
     validcounter = 0
-    validfields = {'byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'}
-    
+    validfields = {'byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'}    
     for element in separatedata:
         if validfields.issubset(set(element.keys())):
-            validcounter +=1
-            
+            validcounter +=1            
     return validcounter
 
 #The following functions are for part B and check each individual criteria against the limitations detailed in the challenge
