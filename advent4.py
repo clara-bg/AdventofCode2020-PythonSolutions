@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Dec  4 07:37:57 2020
+Created on Fri Dec  4 15:38:09 2020
 
 @author: Clara
 """
@@ -41,50 +41,59 @@ def partA(separatedata):
             
     return validcounter
 
-# This fucntion validates all the elements of a given passprt entry to decide whether it's valid.
-def partB(separatedata):
-    totalcounterb = 0
-    
-    for element in separatedata:
-        validcounterb = 0
-        tempcounter = 0
-        
-        if {'byr'}.issubset(set(element.keys())):
+#The following functions are for part B and check each individual criteria against the limitations detailed in the challenge
+def dyrcheck(element):
+    if {'byr'}.issubset(set(element.keys())):
             byr = int(element['byr'])
             if (byr >= 1920) and (byr <= 2002):
-                validcounterb += 1
-        if {'iyr'}.issubset(set(element.keys())):
+                return True
+            
+def iyrcheck(element):
+    if {'iyr'}.issubset(set(element.keys())):
             iyr = int(element['iyr'])
             if (iyr >= 2010) and (iyr <= 2020):
-                validcounterb += 1
-        if {'eyr'}.issubset(set(element.keys())):
+                return True
+            
+def eyrcheck(element):
+    if {'eyr'}.issubset(set(element.keys())):
             eyr = int(element['eyr'])
             if (eyr >= 2020) and (eyr <= 2030):
-                validcounterb += 1
-        if {'hgt'}.issubset(set(element.keys())):
+                return True
+            
+def hgtcheck(element):
+    if {'hgt'}.issubset(set(element.keys())):
             hgt = element['hgt']
             if (hgt[-2:] == 'cm') and (int(hgt[:-2]) >= 150) and (int(hgt[:-2]) <= 193):
-                validcounterb += 1
+                return True
             if (hgt[-2:] == 'in') and (int(hgt[:-2]) >= 59) and (int(hgt[:-2]) <= 76):
-                validcounterb += 1
-        if {'hcl'}.issubset(set(element.keys())):
+                return True
+            
+def hclcheck(element):
+    if {'hcl'}.issubset(set(element.keys())):
             hcl = element['hcl']
             if (len(hcl) == 7) and (hcl[0] == '#') and (all(x in 'abcdef1234567890' for x in hcl[1:])):
-                validcounterb +=1
-        if {'ecl'}.issubset(set(element.keys())):
-            ecl = element['ecl']
-            if (ecl in  {'amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'}):
-                validcounterb +=1
-        if {'pid'}.issubset(set(element.keys())):
+                return True
+            
+def eclcheck(element):
+    if {'ecl'}.issubset(set(element.keys())):
+                ecl = element['ecl']
+                if (ecl in  {'amb', 'blu', 'brn', 'gry', 'grn', 'hzl', 'oth'}):
+                    return True
+
+def pidcheck(element):
+    if {'pid'}.issubset(set(element.keys())):
             pid = element['pid']
             if (len(pid) == 9) and (pid.isdecimal()):
-                validcounterb +=1
-        if validcounterb == 7:
-            totalcounterb +=1
-            
-    return totalcounterb
-        
+                return True
 
+# This function brings all the other part b functions together and checks whether each element (passport entry) is valid or not
+def partB(separatedata):
+    validpartb = 0
+    for element in separatedata:
+        if dyrcheck(element) and iyrcheck(element) and eyrcheck(element) and hgtcheck(element) and hclcheck(element) and eclcheck(element) and pidcheck(element):
+            validpartb +=1
+            
+    return validpartb
 
 formatted_data = dataformat(data)
 print('Part A: Number of valid passports: ', partA(formatted_data))
