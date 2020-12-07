@@ -9,6 +9,8 @@ Created on Mon Dec  7 07:47:17 2020
 Advent of Code 2020 Day 7
 Today's challenge was a big step up from the previous six days.
 The hardest part about this was again formatting the data to be somewhat useful.
+Not my finest code but it works.
+Watch out for the recursive solution in part_B()
 '''
 
 with open('7.txt', 'r') as file:
