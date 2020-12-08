@@ -17,7 +17,7 @@ def routine(data):
     i = 0
     seen_items = set([])
     while i < len(data):
-        # I save every step I take into seen_items to establish when it loops for the second time and to define an exit condition to avoid infinite loops.
+        # I save every step I take into seen_items to establish when it loops for the second time and to define an exit condition,avoiding infinite loops.
         if i in seen_items:
             return accumulator, i
         seen_items.add(i)
