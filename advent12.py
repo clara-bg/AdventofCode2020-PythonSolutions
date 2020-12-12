@@ -7,7 +7,7 @@ Created on Sat Dec 12 07:46:33 2020
 
 '''
 Advent of Code 2020 Day 12
-Today was about following a list of cardinal directions and measuring displacement from the origin.
+Today was about following a list of cardinal directions and measuring distance (sort of) from the origin. 
 '''
 
 with open("12.txt", "r") as file:
@@ -19,7 +19,7 @@ def part_A_turning(direction_facing, direction, degree_turn):
     if direction == 'L':
         direction_facing = facing[(index - degree_turn // 90) % 4] # You have to use mod 4 (length of turning) incase you get 0 as the index so it goes back to 3
     else:
-        direction_facing = facing[(index + degree_turn // 90) % 4] # Mod to deal with values greater than 4 after teh addition
+        direction_facing = facing[(index + degree_turn // 90) % 4] # Mod to deal with values greater than 4 after the addition
     return direction_facing
     
  
