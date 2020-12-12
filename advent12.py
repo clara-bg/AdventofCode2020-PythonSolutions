@@ -71,7 +71,7 @@ def part_B(data):
         direction = i[0]
         magnitude = int(i[1:])
         if direction in turning:
-            for i in range(magnitude//90):
+            for i in range(magnitude//90): # You have to iterate though part_B_turning because the function only does one (I'll change that at some point hopefully)
                 waypoint = part_B_turning(waypoint, direction)
         elif direction in moving:
             if direction == 'F':
