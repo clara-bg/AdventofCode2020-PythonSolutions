@@ -8,8 +8,9 @@ Created on Sun Dec 13 08:06:56 2020
 '''
 Advent of Code 2020 Day 13
 Today was a big step up essentially you had to use various principles of modular arithmetic to predit when the next bus is after aa specified time.
-Part B uses Chinese Factor Theorem
-!'m not yet competent enough to write the code for part 2 from scratch but I found an algorithm to return modular statements in CFT format, which I'll try explain
+Part B uses Chinese Factor Theorem.
+For the second part of part B I used an algorithm I found online to find the x mod y statements for CFT
+Seeing as I don't understand CFT I didn't include it in the code but you can feed the output into an online decoder.
 '''
 
 # This chunk just parses the data
@@ -38,7 +39,7 @@ print('Values to feed into an online Chinese Factor Theorem solver:')
 new_bus_ids = list(enumerate(bus_ids)) # What it looks like => [(0, 19), (1, 41), (2, 859), (3, 23), (4, 13), (5, 17), (6, 29), (7, 373), (8, 37)]
 for j in new_bus_ids:
     index,value = j 
-for value, index in new_bus_ids:        # Unfortunately I don't know how this works I found this algorithm for finding the CFT inputs online but it works.
+for value, index in new_bus_ids:        # algorithm for finding the CFT inputs
     value = -value
     while value < 0:
       value += index
