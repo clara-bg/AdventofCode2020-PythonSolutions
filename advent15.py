@@ -16,14 +16,14 @@ input = [11,18,0,20,1,7,16]
 def routine(rounds, input):
     history = {}
     for i in range(len(input)):
-        history[input[i]] = i + 1 # A dictionary fo the numbers which have been said
+        history[input[i]] = i + 1 # A dictionary of the numbers which have been said
     final = input[-1]
     for i in range(len(input) + 1, rounds + 1): # Add 1 so that final is 2020 not 2019
         if final in history:
             num = i - 1 - history[final] # difference between the turn number when it was last spoken and the turn number of the time it was most recently spoken before then
         else: # If the number hasn't been said before
             num = 0
-        history[final] = i - 1
+        history[final] = i - 1 #Because all the values of i were defined as one more earlier
         final = num
     return final
 
