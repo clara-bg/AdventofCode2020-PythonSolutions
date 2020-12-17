@@ -7,8 +7,7 @@ Created on Mon Dec 14 07:01:18 2020
 
 '''
 Advent of Code 2020 Day 14
->In an ideal world I would take out the identical bits oof the part A and B routine and put them in their own function but eh.
-randdddddddddddddddddddd
+In an ideal world I would take out the identical bits oof the part A and B routine and put them in their own function but eh.
 '''
 
 from itertools import product
