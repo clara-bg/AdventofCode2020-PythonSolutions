@@ -29,5 +29,5 @@ def routine(rounds, input):
 
 start_time = time.time()
 print('Part A: The 2020th number spoken:', routine(2020, input))
-print('Part B: The 3000000th number:', routine(30000000, input))
+print('Part B: The 30000000th number:', routine(30000000, input))
 print('Time taken for program execution:', time.time() - start_time)
